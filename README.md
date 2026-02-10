@@ -11,11 +11,11 @@ Only the following operations are allowed:
 
 `sa`, `sb`, `ss` – swap the top elements
 
-pa, pb – push between stacks
+`pa`, `pb` – push between stacks
 
-ra, rb, rr – rotate stacks up
+`ra`, `rb`, `rr` – rotate stacks up
 
-rra, rrb, rrr – rotate stacks down
+`rra`, `rrb`, `rrr` – rotate stacks down
 
 The program takes a list of integers as input, validates them (no duplicates, valid range), and outputs the sequence of operations required to sort the numbers in ascending order.
 
