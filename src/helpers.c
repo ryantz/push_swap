@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   helpers.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/09 15:27:30 by ryatan            #+#    #+#             */
-/*   Updated: 2026/02/10 21:29:08 by ryatan           ###   ########.fr       */
+/*   Created: 2026/02/10 19:48:15 by ryatan            #+#    #+#             */
+/*   Updated: 2026/02/10 20:13:13 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	ft_print_stack(t_stack *stack)
 {
-	int		i;
-	t_stack	*new_element;
-	t_stack	*head;
+	t_stack *current;
 
-	head = NULL;
-	if (argc < 2)
+	current = stack;
+	while (current != NULL)
 	{
-		ft_printf("Error\n");
-		return (1);
+		ft_printf("%d -> ", current->content);
+		current = current->next;
 	}
-	i = 0;
-	while (i < argc - 1)
-	{
-		new_element = ft_create_stack_element(ft_atoi(argv[i + 1]));
-		ft_push_front_stack(&head, new_element, 'e');
-		i++;
-	}
-	ft_print_stack(head);
-	return (0);
 }

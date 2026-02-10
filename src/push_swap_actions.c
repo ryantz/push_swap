@@ -6,23 +6,23 @@
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 12:55:52 by ryatan            #+#    #+#             */
-/*   Updated: 2026/02/10 15:55:27 by ryatan           ###   ########.fr       */
+/*   Updated: 2026/02/10 20:17:08 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 //sa, sb
-int	ft_swap(int **stack)
+int	ft_swap(t_stack **stack)
 {
-	int	tmp;
+	t_stack	*tmp;
 
-	if (!*stack || !(*stack)[1])
+	if (!*stack || !(*stack)->next)
 	{
 		ft_printf("Do nothing\n");
 		return (1);
 	}
-	tmp = (*stack)[0];
+	tmp = (*stack)->next;
 	(*stack)[0] = (*stack)[1];
 	(*stack)[1] = tmp;
 	return (0);

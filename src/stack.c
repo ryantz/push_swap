@@ -6,13 +6,13 @@
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 16:07:03 by ryatan            #+#    #+#             */
-/*   Updated: 2026/02/10 16:26:54 by ryatan           ###   ########.fr       */
+/*   Updated: 2026/02/10 21:28:54 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack ft_create_stack_element(int	content)
+t_stack *ft_create_stack_element(int content)
 {
 	t_stack	*head;
 
@@ -24,19 +24,31 @@ t_stack ft_create_stack_element(int	content)
 	return (head);
 }
 
-int ft_push_stack(t_stack **stack, t_stack *new)
+t_stack	*ft_last_stack_element(t_stack *head)
 {
-	if (!new)
-		return (1);
-	new->next = *stack;
-	*stack = new;
+	if (!head)
+		return (NULL);
+	while (head->next != NULL)
+		head = head->next;
+	return (head);
 }
 
-void	ft_print_stack(t_stack **stack)
+int ft_push_front_stack(t_stack **stack, t_stack *new_element, char end)
 {
-	while ((*stack)->next != NULL)
+	t_stack *ptr_last;
+
+	ptr_last = *stack;
+	if (!new_element || !end)
+		return (1);
+	if (end == 'f')
 	{
-		ft_printf("%d\n", (*stack)->content);
-		*stack = (*stack)->next;
+		new_element->next = *stack;
+		*stack = new_element;
 	}
+	else if (end == 'e')
+	{
+		ptr_last = ft_last_stack_element(*stack);
+		ptr_last->next = new_element;
+	}
+	return (0);
 }
