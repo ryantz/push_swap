@@ -6,7 +6,7 @@
 #    By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/09 08:56:45 by ryatan            #+#    #+#              #
-#    Updated: 2026/02/09 14:58:40 by ryatan           ###   ########.fr        #
+#    Updated: 2026/02/10 13:06:39 by ryatan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,10 @@ CFLAGS = -Wall -Wextra -Werror
 OBJ_DIR = obj
 SRC_DIR = src
 
-SRC = main.c
+SRC = main.c \
+	  push_swap_actions.c \
+	  helpers.c
+
 OBJ = $(SRC:%.c=$(OBJ_DIR)/%.o)
 
 LIBFT_DIR = libft

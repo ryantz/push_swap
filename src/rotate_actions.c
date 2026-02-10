@@ -1,28 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   helpers.c                                          :+:      :+:    :+:   */
+/*   rotate_actions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/09 15:04:58 by ryatan            #+#    #+#             */
-/*   Updated: 2026/02/10 12:55:26 by ryatan           ###   ########.fr       */
+/*   Created: 2026/02/10 12:59:46 by ryatan            #+#    #+#             */
+/*   Updated: 2026/02/10 13:00:44 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_print_stacks(int *stack_a, int *stack_b, int argc)
-{
-	int	i;
-
-	i = 0;
-	ft_printf("|stack_a |stack_b |\n");
-	while (i < argc - 1)
-	{
-		ft_printf("|%d 	 |%d	  |\n", stack_a[i], stack_b[i]);
-		ft_printf("|========|========|\n");
-		i++;
-	}
-	return (0);
-}
+//ra
+//rb
+//rr
