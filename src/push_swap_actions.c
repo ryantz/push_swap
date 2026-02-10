@@ -6,7 +6,7 @@
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 12:55:52 by ryatan            #+#    #+#             */
-/*   Updated: 2026/02/10 14:08:33 by ryatan           ###   ########.fr       */
+/*   Updated: 2026/02/10 15:55:27 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,20 @@ int	ft_swap_both(int **stack_a, int **stack_b)
 
 //pa
 //pb
-//int	ft_push(int **stack_a, int **stack_b)
-//{
-//	return (0);
-//}
+int	ft_push(int **stack_a, int **stack_b, char to_dir)
+{
+	int	tmp;
+
+	tmp = 0;
+	if (!*stack_a || !*stack_b || !to_dir)
+		return (1);
+	if (to_dir == 'a')
+	{
+		tmp = (*stack_a)[0];
+		(*stack_b)[0] = tmp;
+	}
+	else if (to_dir == 'b')
+	{
+	}
+	return (0);
+}
