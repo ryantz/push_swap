@@ -6,7 +6,7 @@
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 16:07:03 by ryatan            #+#    #+#             */
-/*   Updated: 2026/02/11 23:05:32 by ryatan           ###   ########.fr       */
+/*   Updated: 2026/02/11 23:19:00 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,29 +57,5 @@ int ft_push_stack(t_stack **stack, t_stack *new_element, char end)
 		ptr_last->next = new_element;
 		new_element->next = NULL;
 	}
-	return (0);
-}
-
-int	ft_swap_single(t_stack **stack)
-{
-	t_stack	*first_element;
-	t_stack	*second_element;
-	t_stack	*third_element;
-	
-	if (!*stack || !(*stack)->next)
-		return (0);
-	first_element = *stack;
-	second_element = (*stack)->next;
-	third_element = (*stack)->next->next;
-	*stack = second_element;
-	second_element->next = first_element;
-	first_element->next = third_element;
-	return (0);
-}
-
-int	ft_swap_both(t_stack **stack_a, t_stack **stack_b)
-{
-	ft_swap_single(stack_a);
-	ft_swap_single(stack_b);
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/09 08:56:45 by ryatan            #+#    #+#              #
-#    Updated: 2026/02/10 19:48:27 by ryatan           ###   ########.fr        #
+#    Updated: 2026/02/11 23:19:47 by ryatan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRC_DIR = src
 
 SRC = main.c \
 	  helpers.c \
+	  push_swap_actions.c \
 	  stack.c 
 
 OBJ = $(SRC:%.c=$(OBJ_DIR)/%.o)
