@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "move_operations.h"
 
 int	main(int argc, char **argv)
 {

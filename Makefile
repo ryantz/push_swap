@@ -6,7 +6,7 @@
 #    By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/09 08:56:45 by ryatan            #+#    #+#              #
-#    Updated: 2026/02/12 10:39:39 by ryatan           ###   ########.fr        #
+#    Updated: 2026/02/12 11:30:39 by ryatan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,14 +17,17 @@ CFLAGS = -Wall -Wextra -Werror
 
 OBJ_DIR = obj
 SRC_DIR = src
+MV_DIR = move_operations
 
-SRC = main.c \
-	  helpers.c \
-	  push_swap_operations.c \
-	  rotate_operations.c \
-	  stack.c 
+SRC = $(SRC_DIR)/main.c \
+	  $(SRC_DIR)/helpers.c \
+	  $(SRC_DIR)/stack.c \
+	  $(SRC_DIR)/$(MV_DIR)/push_swap_operations.c \
+	  $(SRC_DIR)/$(MV_DIR)/rotate_operations.c
 
-OBJ = $(SRC:%.c=$(OBJ_DIR)/%.o)
+# pattern substitution
+# $(patsubst WHAT_TO_MATCH,WHAT_TO_REPLACE_IT_WITH,WHERE_TO_LOOK)
+OBJ = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC))
 
 LIBFT_DIR = libft
 PRINTF_DIR = ft_printf
@@ -44,7 +47,11 @@ $(PRINTF):
 $(OBJ_DIR): 
 	mkdir -p $(OBJ_DIR)
 
+#To build any object file inside obj/,
+#compile the matching source file inside src/,
+#and create the needed subfolder first.
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
+	@mkdir -p $(dir $@)
 	$(COMPILER) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 all: $(NAME)
