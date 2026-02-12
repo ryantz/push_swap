@@ -6,7 +6,7 @@
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 15:27:30 by ryatan            #+#    #+#             */
-/*   Updated: 2026/02/11 23:36:28 by ryatan           ###   ########.fr       */
+/*   Updated: 2026/02/12 10:58:34 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,18 @@ int	main(int argc, char **argv)
 	ft_printf("\n");
 	ft_printf("stack b:\n");
 	ft_print_stack(stack_b);
+	ft_printf("\n");
+	ft_printf("rotating stack_a\n");
+	ft_reverse_rotate_single(&stack_a);
+	ft_print_stack(stack_a);
+	ft_printf("\n");
+	ft_printf("rotating stack_a and stack b\n");
+	ft_reverse_rotate_both(&stack_a, &stack_b);
+	ft_printf("stack a:\n");
+	ft_print_stack(stack_a);
+	ft_printf("\n");
+	ft_printf("stack b:\n");
+	ft_print_stack(stack_b);
+	ft_printf("\n");
 	return (0);
 }

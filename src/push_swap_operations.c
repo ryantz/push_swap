@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_actions.c                                :+:      :+:    :+:   */
+/*   push_swap_operations.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 12:55:52 by ryatan            #+#    #+#             */
-/*   Updated: 2026/02/11 23:40:26 by ryatan           ###   ########.fr       */
+/*   Updated: 2026/02/12 11:01:40 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_swap_single(t_stack **stack)
 	t_stack	*first_element;
 	t_stack	*second_element;
 	t_stack	*third_element;
-	
+
 	if (!*stack || !(*stack)->next)
 		return (1);
 	first_element = *stack;
