@@ -6,7 +6,7 @@
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 16:30:54 by ryatan            #+#    #+#             */
-/*   Updated: 2025/11/25 19:49:55 by ryatan           ###   ########.fr       */
+/*   Updated: 2026/02/14 12:49:25 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <bsd/string.h> // remove
+# include <string.h> // remove
 # include <ctype.h> // remove
 # include <stdio.h> // remove
 # include <limits.h> // remove
