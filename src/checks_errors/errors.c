@@ -1,0 +1,78 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   errors.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/12 17:03:06 by ryatan            #+#    #+#             */
+/*   Updated: 2026/02/19 14:32:19 by ryatan           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "checks_errors.h"
+
+int	ft_check_input(int argc, char **argv);
+int	ft_check_arg_count(int argc);
+int	ft_check_limits(char *string_nb);
+
+int	ft_error_checks(int argc, char **argv)
+{
+	if (ft_check_arg_count(argc) == 1)
+		return (1);
+	if (ft_check_input(argc, argv) == 1)
+		return (1);
+	return (0);
+}
+
+int	ft_check_arg_count(int argc)
+{
+	if (!argc)
+		return (1);
+	if (argc < 2)
+	{
+		ft_print_error("Error\n");
+		return (1);
+	}
+	return (0);
+}
+
+int	ft_check_input(int argc, char **argv)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	while (i < argc)
+	{
+		j = 0;
+		if (ft_check_limits(argv[i]) == 1)
+		{
+			ft_print_error("Error\n");
+			return (1);
+		}
+		while (argv[i][j])
+		{
+			if (argv[i][j] == '-')
+				j += 1;
+			if (ft_ischardigit(argv[i][j]))
+			{
+				ft_print_error("Error\n");
+				return (1);
+			}
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+
+int	ft_check_limits(char *string_nb)
+{
+	long	nb;
+
+	nb = ft_atoi(string_nb);
+	if (nb > 2147483647 || nb < -2147483648)
+		return (1);
+	return (0);
+}

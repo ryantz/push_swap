@@ -6,7 +6,7 @@
 #    By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/09 08:56:45 by ryatan            #+#    #+#              #
-#    Updated: 2026/02/12 11:30:39 by ryatan           ###   ########.fr        #
+#    Updated: 2026/02/19 15:01:03 by ryatan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,12 +18,16 @@ CFLAGS = -Wall -Wextra -Werror
 OBJ_DIR = obj
 SRC_DIR = src
 MV_DIR = move_operations
+CHK_ERR_DIR = checks_errors
+ALGO_DIR = algorithm
 
 SRC = $(SRC_DIR)/main.c \
 	  $(SRC_DIR)/helpers.c \
 	  $(SRC_DIR)/stack.c \
 	  $(SRC_DIR)/$(MV_DIR)/push_swap_operations.c \
-	  $(SRC_DIR)/$(MV_DIR)/rotate_operations.c
+	  $(SRC_DIR)/$(MV_DIR)/rotate_operations.c \
+	  $(SRC_DIR)/$(CHK_ERR_DIR)/errors.c \
+	  $(SRC_DIR)/$(ALGO_DIR)/sorting.c \
 
 # pattern substitution
 # $(patsubst WHAT_TO_MATCH,WHAT_TO_REPLACE_IT_WITH,WHERE_TO_LOOK)

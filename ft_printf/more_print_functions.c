@@ -6,13 +6,13 @@
 /*   By: ryatan <ryatan@student.42singapore.sg      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 20:57:20 by ryatan            #+#    #+#             */
-/*   Updated: 2025/12/02 22:00:44 by ryatan           ###   ########.fr       */
+/*   Updated: 2026/02/19 13:26:58 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	ft_strlen(const char *s)
+size_t	ft_printf_strlen(const char *s)
 {
 	size_t	len;
 

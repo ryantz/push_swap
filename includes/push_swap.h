@@ -6,7 +6,7 @@
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 14:50:11 by ryatan            #+#    #+#             */
-/*   Updated: 2026/02/12 11:05:12 by ryatan           ###   ########.fr       */
+/*   Updated: 2026/02/19 14:59:12 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 typedef struct s_stack
 {
 	int				content;
+	int				index;
 	struct s_stack	*next;
 }				t_stack;
 
@@ -30,5 +31,8 @@ int		ft_push_stack(t_stack **stack, t_stack *new_element, char end);
 
 // helpers
 void	ft_print_stack(t_stack *stack);
+int		ft_ischardigit(char c);
+int		ft_print_error(char *error_message);
+int		ft_stack_len(t_stack *stack);
 
 #endif
