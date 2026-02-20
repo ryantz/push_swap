@@ -6,7 +6,7 @@
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 14:25:49 by ryatan            #+#    #+#             */
-/*   Updated: 2026/02/19 15:16:40 by ryatan           ###   ########.fr       */
+/*   Updated: 2026/02/20 16:23:48 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,6 @@
 # include "move_operations.h"
 
 int	ft_sort_two(t_stack **stack_a);
+int	ft_sort_three(t_stack **stack_a);
 
 #endif

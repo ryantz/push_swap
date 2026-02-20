@@ -6,7 +6,7 @@
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 17:03:06 by ryatan            #+#    #+#             */
-/*   Updated: 2026/02/19 14:32:19 by ryatan           ###   ########.fr       */
+/*   Updated: 2026/02/20 18:52:22 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,19 +47,13 @@ int	ft_check_input(int argc, char **argv)
 	{
 		j = 0;
 		if (ft_check_limits(argv[i]) == 1)
-		{
-			ft_print_error("Error\n");
-			return (1);
-		}
+			return (ft_print_error("Error\n"), 1);
 		while (argv[i][j])
 		{
 			if (argv[i][j] == '-')
 				j += 1;
 			if (ft_ischardigit(argv[i][j]))
-			{
-				ft_print_error("Error\n");
-				return (1);
-			}
+				return (ft_print_error("Error\n"), 1);
 			j++;
 		}
 		i++;

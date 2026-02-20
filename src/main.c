@@ -6,7 +6,7 @@
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 15:27:30 by ryatan            #+#    #+#             */
-/*   Updated: 2026/02/19 14:58:59 by ryatan           ###   ########.fr       */
+/*   Updated: 2026/02/20 17:43:50 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ int	main(int argc, char **argv)
 	int		i;
 	t_stack	*new_element;
 	t_stack	*stack_a;
-	t_stack	*stack_b;
+	//t_stack	*stack_b;
 
 	stack_a = NULL;
-	stack_b = NULL;
+	//stack_b = NULL;
 	if (ft_error_checks(argc, argv) != 0)
 		return (1);
 	i = 0;
@@ -34,7 +34,7 @@ int	main(int argc, char **argv)
 	}
 	ft_printf("original stack a:\n");
 	ft_print_stack(stack_a);
-	ft_sort_two(&stack_a);
+	ft_sort_three(&stack_a);
 	ft_print_stack(stack_a);
 	return (0);
 }

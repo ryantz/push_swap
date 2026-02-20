@@ -6,13 +6,17 @@
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 12:55:52 by ryatan            #+#    #+#             */
-/*   Updated: 2026/02/12 11:01:40 by ryatan           ###   ########.fr       */
+/*   Updated: 2026/02/16 12:32:39 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "move_operations.h"
 
-//sa, sb
+/*
+ * @brief swap the first two elements in the stack
+ * @param &stack_name - reference to a stack (linked list)
+ * @return 0 (success) 1 (fail)
+ */
 int	ft_swap_single(t_stack **stack)
 {
 	t_stack	*first_element;
@@ -30,6 +34,12 @@ int	ft_swap_single(t_stack **stack)
 	return (0);
 }
 
+/*
+ * @brief swap the first two elements for both stacks at the same time
+ * @param &stack_a, &stack_b
+ * @return 0 (success), other checks are in ft_swap_single
+ */
+
 int	ft_swap_both(t_stack **stack_a, t_stack **stack_b)
 {
 	ft_swap_single(stack_a);
@@ -37,6 +47,11 @@ int	ft_swap_both(t_stack **stack_a, t_stack **stack_b)
 	return (0);
 }
 
+/*
+ * @brief push the top element of a into stack b
+ * @param &stack_a, &stack_b
+ * @return 0 (success) 1 (fail)
+ */
 int	ft_push_top_b(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*first_a;
@@ -54,6 +69,11 @@ int	ft_push_top_b(t_stack **stack_a, t_stack **stack_b)
 	return (0);
 }
 
+/*
+ * @brief push the top element of a into stack b
+ * @param &stack_a, &stack_b
+ * @return 0 (success) 1 (fail)
+ */
 int	ft_push_top_a(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*first_a;

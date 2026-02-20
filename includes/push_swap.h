@@ -6,7 +6,7 @@
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 14:50:11 by ryatan            #+#    #+#             */
-/*   Updated: 2026/02/19 14:59:12 by ryatan           ###   ########.fr       */
+/*   Updated: 2026/02/20 16:32:53 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ void	ft_print_stack(t_stack *stack);
 int		ft_ischardigit(char c);
 int		ft_print_error(char *error_message);
 int		ft_stack_len(t_stack *stack);
+void	ft_log(void);
 
 #endif
