@@ -6,12 +6,12 @@
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 09:03:54 by ryatan            #+#    #+#             */
-/*   Updated: 2026/02/09 15:26:23 by ryatan           ###   ########.fr       */
+/*   Updated: 2026/05/03 08:38:46 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_swap(char *stack_a)
+void	push_swap(char **stack_a, char **stack_b)
 {
 }

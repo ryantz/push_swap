@@ -6,7 +6,7 @@
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 16:07:03 by ryatan            #+#    #+#             */
-/*   Updated: 2026/02/12 11:03:54 by ryatan           ###   ########.fr       */
+/*   Updated: 2026/05/03 08:31:43 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,32 @@ int	ft_push_stack(t_stack **stack, t_stack *new_element, char end)
 		new_element->next = NULL;
 	}
 	return (0);
+}
+
+void	ft_assign_index(t_stack *stack)
+{
+	t_stack	*current;
+	t_stack	*min_node;
+	int		index;
+	int		size;
+
+	size = ft_stack_len(stack);
+	index = 0;
+	while (index < size)
+	{
+		current = stack;
+		min_node = NULL;
+		while (current)
+		{
+			if (current->index == -1)
+			{
+				if (!min_node || current->content < min_node->content)
+					min_node = current;
+			}
+			current = current->next;
+		}
+		if (min_node)
+			min_node->index = index;
+		index++;
+	}
 }

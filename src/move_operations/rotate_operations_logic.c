@@ -1,55 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_operations.c                                :+:      :+:    :+:   */
+/*   rotate_operations_logic.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 12:59:46 by ryatan            #+#    #+#             */
-/*   Updated: 2026/05/03 09:18:02 by ryatan           ###   ########.fr       */
+/*   Updated: 2026/05/03 09:15:25 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "move_operations.h"
 
 //ra, rb
-int	ft_rotate_single(t_stack **stack, char which)
+int	ft_rotate_logic(t_stack **stack)
 {
-	if (ft_rotate_logic(stack) == 1)
+	t_stack	*last;
+	t_stack	*first;
+	t_stack	*second;
+
+	if (!*stack || !(*stack)->next)
 		return (1);
-	if (which == 'a')
-		ft_printf("ra\n");
-	else
-		ft_printf("rb\n");
+	last = ft_last_stack_element(*stack);
+	first = *stack;
+	second = (*stack)->next;
+	last->next = first;
+	first->next = NULL;
+	*stack = second;
 	return (0);
 }
 
-//rr
-int	ft_rotate_both(t_stack **stack_a, t_stack **stack_b)
+int	ft_reverse_rotate_logic(t_stack **stack)
 {
-	ft_rotate_logic(stack_a);
-	ft_rotate_logic(stack_b);
-	ft_printf("rr\n");
-	return (0);
-}
+	t_stack	*last;
+	t_stack	*first;
+	t_stack	*second_last;
 
-//rra, rrb
-int	ft_reverse_rotate_single(t_stack **stack, char which)
-{
-	if (ft_reverse_rotate_logic(stack) == 1)
+	if (!*stack || !(*stack)->next)
 		return (1);
-	if (which == 'a')
-		ft_printf("rra\n");
-	else
-		ft_printf("rrb\n");
-	return (0);
-}
-
-//rrr
-int	ft_reverse_rotate_both(t_stack **stack_a, t_stack **stack_b)
-{
-	ft_reverse_rotate_logic(stack_a);
-	ft_reverse_rotate_logic(stack_b);
-	ft_printf("rrr\n");
+	last = ft_last_stack_element(*stack);
+	second_last = ft_second_last_stack_element(*stack);
+	first = *stack;
+	last->next = first;
+	*stack = last;
+	second_last->next = NULL;
 	return (0);
 }

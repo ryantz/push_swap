@@ -6,11 +6,11 @@
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 17:03:06 by ryatan            #+#    #+#             */
-/*   Updated: 2026/02/20 18:52:22 by ryatan           ###   ########.fr       */
+/*   Updated: 2026/05/03 09:07:36 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checks_errors.h"
+#include "check_errors.h"
 
 int	ft_check_input(int argc, char **argv);
 int	ft_check_arg_count(int argc);
@@ -22,18 +22,15 @@ int	ft_error_checks(int argc, char **argv)
 		return (1);
 	if (ft_check_input(argc, argv) == 1)
 		return (1);
+	if (ft_check_duplicates(argc, argv) == 1)
+		return (ft_print_error("Error\n"), 1);
 	return (0);
 }
 
 int	ft_check_arg_count(int argc)
 {
-	if (!argc)
-		return (1);
 	if (argc < 2)
-	{
-		ft_print_error("Error\n");
 		return (1);
-	}
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 14:50:11 by ryatan            #+#    #+#             */
-/*   Updated: 2026/02/20 16:32:53 by ryatan           ###   ########.fr       */
+/*   Updated: 2026/05/03 09:06:36 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,15 @@ t_stack	*ft_create_stack_element(int content);
 t_stack	*ft_last_stack_element(t_stack *head);
 t_stack	*ft_second_last_stack_element(t_stack *head);
 int		ft_push_stack(t_stack **stack, t_stack *new_element, char end);
+void	ft_assign_index(t_stack *stack);
 
 // helpers
 void	ft_print_stack(t_stack *stack);
 int		ft_ischardigit(char c);
 int		ft_print_error(char *error_message);
 int		ft_stack_len(t_stack *stack);
-void	ft_log(void);
+int		ft_find_min(t_stack *stack);
+int		ft_is_sorted(t_stack *stack);
+void	ft_free_stack(t_stack **stack_a);
 
 #endif

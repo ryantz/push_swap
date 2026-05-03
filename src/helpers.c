@@ -6,24 +6,11 @@
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 19:48:15 by ryatan            #+#    #+#             */
-/*   Updated: 2026/02/19 14:55:18 by ryatan           ###   ########.fr       */
+/*   Updated: 2026/05/03 09:03:20 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	ft_print_stack(t_stack *stack)
-{
-	t_stack	*current;
-
-	current = stack;
-	while (current != NULL)
-	{
-		ft_printf("%d -> ", current->content);
-		current = current->next;
-	}
-	ft_printf("NULL\n");
-}
 
 int	ft_ischardigit(char c)
 {
@@ -58,7 +45,27 @@ int	ft_stack_len(t_stack *stack)
 	return (stack_len);
 }
 
-void	ft_log(void)
+int ft_find_min(t_stack *stack)
 {
-	ft_printf("here\n");
+    int min;
+
+    min = stack->content;
+    while (stack)
+    {
+        if (stack->content < min)
+            min = stack->content;
+        stack = stack->next;
+    }
+    return (min);
+}
+
+int ft_is_sorted(t_stack *stack)
+{
+    while (stack->next)
+    {
+        if (stack->content > stack->next->content)
+            return (0);
+        stack = stack->next;
+    }
+    return (1);
 }

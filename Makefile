@@ -6,7 +6,7 @@
 #    By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/09 08:56:45 by ryatan            #+#    #+#              #
-#    Updated: 2026/02/19 15:01:03 by ryatan           ###   ########.fr        #
+#    Updated: 2026/05/03 09:15:55 by ryatan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,11 +23,16 @@ ALGO_DIR = algorithm
 
 SRC = $(SRC_DIR)/main.c \
 	  $(SRC_DIR)/helpers.c \
+	  $(SRC_DIR)/helpers_2.c \
 	  $(SRC_DIR)/stack.c \
 	  $(SRC_DIR)/$(MV_DIR)/push_swap_operations.c \
 	  $(SRC_DIR)/$(MV_DIR)/rotate_operations.c \
+	  $(SRC_DIR)/$(MV_DIR)/rotate_operations_logic.c \
 	  $(SRC_DIR)/$(CHK_ERR_DIR)/errors.c \
+	  $(SRC_DIR)/$(CHK_ERR_DIR)/errors_2.c \
 	  $(SRC_DIR)/$(ALGO_DIR)/sorting.c \
+	  $(SRC_DIR)/$(ALGO_DIR)/sorting_more.c \
+	  $(SRC_DIR)/$(ALGO_DIR)/radix.c \
 
 # pattern substitution
 # $(patsubst WHAT_TO_MATCH,WHAT_TO_REPLACE_IT_WITH,WHERE_TO_LOOK)

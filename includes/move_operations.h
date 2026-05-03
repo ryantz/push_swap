@@ -6,7 +6,7 @@
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 11:27:28 by ryatan            #+#    #+#             */
-/*   Updated: 2026/02/12 11:27:28 by ryatan           ###   ########.fr       */
+/*   Updated: 2026/05/03 09:15:42 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,18 @@
 # include "push_swap.h"
 
 // swap operations
-int		ft_swap_single(t_stack **stack);
+int		ft_swap_logic(t_stack **stack);
+int		ft_swap_single(t_stack **stack, char which);
 int		ft_swap_both(t_stack **stack_a, t_stack **stack_b);
 int		ft_push_top_b(t_stack **stack_a, t_stack **stack_b);
 int		ft_push_top_a(t_stack **stack_a, t_stack **stack_b);
 
 // rotate operations
-int		ft_rotate_single(t_stack **stack);
+int		ft_rotate_logic(t_stack **stack);
+int		ft_reverse_rotate_logic(t_stack **stack);
+int		ft_rotate_single(t_stack **stack, char which);
 int		ft_rotate_both(t_stack **stack_a, t_stack **stack_b);
-int		ft_reverse_rotate_single(t_stack **stack);
+int		ft_reverse_rotate_single(t_stack **stack, char which);
 int		ft_reverse_rotate_both(t_stack **stack_a, t_stack **stack_b);
 
 #endif
