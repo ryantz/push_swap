@@ -6,7 +6,7 @@
 #    By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/09 08:56:45 by ryatan            #+#    #+#              #
-#    Updated: 2026/05/03 09:15:55 by ryatan           ###   ########.fr        #
+#    Updated: 2026/05/05 15:11:45 by ryatan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRC = $(SRC_DIR)/main.c \
 	  $(SRC_DIR)/helpers.c \
 	  $(SRC_DIR)/helpers_2.c \
 	  $(SRC_DIR)/stack.c \
+	  $(SRC_DIR)/push_swap.c \
 	  $(SRC_DIR)/$(MV_DIR)/push_swap_operations.c \
 	  $(SRC_DIR)/$(MV_DIR)/rotate_operations.c \
 	  $(SRC_DIR)/$(MV_DIR)/rotate_operations_logic.c \

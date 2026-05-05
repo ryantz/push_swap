@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   radix.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/05 14:55:14 by ryatan            #+#    #+#             */
+/*   Updated: 2026/05/05 14:55:15 by ryatan           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "algorithm.h"
 
-int	ft_sort_radix(t_stack **stack_a, t_stack **stack_b)
+void	ft_sort_radix(t_stack **stack_a, t_stack **stack_b)
 {
 	int	size;
 	int	max_bits;
@@ -27,5 +39,4 @@ int	ft_sort_radix(t_stack **stack_a, t_stack **stack_b)
 			ft_push_top_a(stack_a, stack_b);
 		bit++;
 	}
-	return (0);
 }

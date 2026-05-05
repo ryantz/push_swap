@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/10 19:48:15 by ryatan            #+#    #+#             */
-/*   Updated: 2026/05/03 09:03:20 by ryatan           ###   ########.fr       */
+/*   Created: 2026/05/05 15:04:14 by ryatan            #+#    #+#             */
+/*   Updated: 2026/05/05 15:04:15 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,27 +45,27 @@ int	ft_stack_len(t_stack *stack)
 	return (stack_len);
 }
 
-int ft_find_min(t_stack *stack)
+int	ft_find_min(t_stack *stack)
 {
-    int min;
+	int	min;
 
-    min = stack->content;
-    while (stack)
-    {
-        if (stack->content < min)
-            min = stack->content;
-        stack = stack->next;
-    }
-    return (min);
+	min = stack->content;
+	while (stack)
+	{
+		if (stack->content < min)
+			min = stack->content;
+		stack = stack->next;
+	}
+	return (min);
 }
 
-int ft_is_sorted(t_stack *stack)
+int	ft_is_sorted(t_stack *stack)
 {
-    while (stack->next)
-    {
-        if (stack->content > stack->next->content)
-            return (0);
-        stack = stack->next;
-    }
-    return (1);
+	while (stack->next)
+	{
+		if (stack->content > stack->next->content)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
 }

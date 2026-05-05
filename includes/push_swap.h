@@ -6,7 +6,7 @@
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 14:50:11 by ryatan            #+#    #+#             */
-/*   Updated: 2026/05/03 09:06:36 by ryatan           ###   ########.fr       */
+/*   Updated: 2026/05/05 15:16:09 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,5 @@ int		ft_find_min(t_stack *stack);
 int		ft_is_sorted(t_stack *stack);
 void	ft_free_stack(t_stack **stack_a);
 
+void	push_swap(t_stack **stack_a, t_stack **stack_b);
 #endif
