@@ -6,7 +6,7 @@
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 16:07:03 by ryatan            #+#    #+#             */
-/*   Updated: 2026/05/03 08:31:43 by ryatan           ###   ########.fr       */
+/*   Updated: 2026/05/06 13:51:00 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_stack	*ft_create_stack_element(int content)
 		return (NULL);
 	head->content = content;
 	head->next = NULL;
+	head->index = -1;
 	return (head);
 }
 
