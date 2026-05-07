@@ -6,7 +6,7 @@
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 17:03:06 by ryatan            #+#    #+#             */
-/*   Updated: 2026/05/03 09:07:36 by ryatan           ###   ########.fr       */
+/*   Updated: 2026/05/07 09:32:22 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,19 @@ int	ft_check_input(int argc, char **argv)
 	while (i < argc)
 	{
 		j = 0;
+		if (argv[i][0] == '\0')
+			return (ft_print_error("Error\n"), 1);
 		if (ft_check_limits(argv[i]) == 1)
 			return (ft_print_error("Error\n"), 1);
 		while (argv[i][j])
 		{
 			if (argv[i][j] == '-')
-				j += 1;
-			if (ft_ischardigit(argv[i][j]))
+			{
+				j++;
+				if (!argv[i][j] || ft_ischardigit(argv[i][j]))
+					return (ft_print_error("Error\n"), 1);
+			}
+			else if (ft_ischardigit(argv[i][j]))
 				return (ft_print_error("Error\n"), 1);
 			j++;
 		}
@@ -61,9 +67,21 @@ int	ft_check_input(int argc, char **argv)
 int	ft_check_limits(char *string_nb)
 {
 	long	nb;
-
-	nb = ft_atoi(string_nb);
-	if (nb > 2147483647 || nb < -2147483648)
-		return (1);
+	int		sign;
+	
+	nb = 0;
+	sign = 1;
+	if (*string_nb == '-')
+	{
+		sign = -1;
+		string_nb++;
+	}
+	while (*string_nb)
+	{
+		nb = nb * 10 + (*string_nb - '0');
+		if (nb * sign > 2147483647 || nb * sign < -2147483648)
+			return (1);
+		string_nb++;
+	}
 	return (0);
 }
