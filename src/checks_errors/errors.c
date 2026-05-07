@@ -6,7 +6,7 @@
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 17:03:06 by ryatan            #+#    #+#             */
-/*   Updated: 2026/05/07 09:32:22 by ryatan           ###   ########.fr       */
+/*   Updated: 2026/05/07 10:28:25 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ int	ft_check_limits(char *string_nb)
 {
 	long	nb;
 	int		sign;
+	int		digit;
 	
 	nb = 0;
 	sign = 1;
@@ -78,10 +79,13 @@ int	ft_check_limits(char *string_nb)
 	}
 	while (*string_nb)
 	{
-		nb = nb * 10 + (*string_nb - '0');
-		if (nb * sign > 2147483647 || nb * sign < -2147483648)
+		digit = *string_nb - '0';
+		if (nb > (2147483647 - digit) / 10)
 			return (1);
+		nb = nb * 10 + digit;
 		string_nb++;
 	}
+	if (sign == -1 && nb > 2147483648L)
+		return (1);
 	return (0);
 }
