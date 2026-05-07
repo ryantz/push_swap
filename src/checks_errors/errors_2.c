@@ -6,28 +6,47 @@
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/05 15:03:21 by ryatan            #+#    #+#             */
-/*   Updated: 2026/05/05 15:03:21 by ryatan           ###   ########.fr       */
+/*   Updated: 2026/05/07 18:22:35 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "check_errors.h"
 
-int	ft_check_duplicates(int argc, char **argv)
+int	ft_check_duplicates(t_stack *stack)
 {
+	int	len;
 	int	i;
 	int	j;
+	int	counter;
+	int	*track;
+	t_stack *ptr;
 
-	i = 1;
-	while (i < argc)
+	len = ft_stacksize(stack);
+	track = malloc(len * sizeof(int));
+	i = 0;
+	ptr = stack;
+	while (i < len)
 	{
-		j = i + 1;
-		while (j < argc)
-		{
-			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
-				return (1);
-			j++;
-		}
+		track[i] = ptr->content;
+		ptr = ptr->next;
 		i++;
 	}
-	return (0);
+	i = 0;
+	ptr = stack;
+	while (i < len)
+	{
+		j = 0;
+		counter = 0;
+		while (j < len)
+		{
+			if (ptr->content == track[j])
+				counter++;
+			if (counter > 1)
+				return (free(track), 1);
+			j++;
+		}
+		ptr = ptr->next;
+		i++;
+	}
+	return (free(track), 0);
 }
