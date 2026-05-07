@@ -6,7 +6,7 @@
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 17:03:06 by ryatan            #+#    #+#             */
-/*   Updated: 2026/05/07 10:28:25 by ryatan           ###   ########.fr       */
+/*   Updated: 2026/05/07 10:39:16 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	ft_check_input(int argc, char **argv);
 int	ft_check_arg_count(int argc);
 int	ft_check_limits(char *string_nb);
+int	ft_valid_number(char *str);
 
 int	ft_error_checks(int argc, char **argv)
 {
@@ -37,28 +38,36 @@ int	ft_check_arg_count(int argc)
 int	ft_check_input(int argc, char **argv)
 {
 	int	i;
-	int	j;
 
 	i = 1;
 	while (i < argc)
 	{
-		j = 0;
 		if (argv[i][0] == '\0')
 			return (ft_print_error("Error\n"), 1);
 		if (ft_check_limits(argv[i]) == 1)
 			return (ft_print_error("Error\n"), 1);
-		while (argv[i][j])
-		{
-			if (argv[i][j] == '-')
-			{
-				j++;
-				if (!argv[i][j] || ft_ischardigit(argv[i][j]))
-					return (ft_print_error("Error\n"), 1);
-			}
-			else if (ft_ischardigit(argv[i][j]))
-				return (ft_print_error("Error\n"), 1);
-			j++;
-		}
+		if (ft_valid_number(argv[i]))
+			return (ft_print_error("Error\n"), 1);
+		i++;
+	}
+	return (0);
+}
+
+int	ft_valid_number(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str[i] == '-')
+	{
+		i++;
+		if (!str[i])
+			return (1);
+	}
+	while (str[i])
+	{
+		if (ft_ischardigit(str[i]))
+			return (1);
 		i++;
 	}
 	return (0);
@@ -69,7 +78,7 @@ int	ft_check_limits(char *string_nb)
 	long	nb;
 	int		sign;
 	int		digit;
-	
+
 	nb = 0;
 	sign = 1;
 	if (*string_nb == '-')
