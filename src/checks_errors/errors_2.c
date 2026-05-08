@@ -6,61 +6,28 @@
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/05 15:03:21 by ryatan            #+#    #+#             */
-/*   Updated: 2026/05/08 22:31:18 by ryatan           ###   ########.fr       */
+/*   Updated: 2026/05/08 22:58:29 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "check_errors.h"
 
-void	create_tracker(int	**track, t_stack *stack);
-
 int	ft_check_duplicates(t_stack *stack)
 {
-	int		i;
-	int		j;
-	int		counter;
-	int		*tracker;
-	t_stack	*ptr;
+	t_stack	*ptr1;
+	t_stack	*ptr2;
 
-	create_tracker(&tracker, stack);
-	if (!tracker)
-		return (1);
-	i = 0;
-	ptr = stack;
-	while (i < ft_stacksize(stack))
+	ptr1 = stack;
+	while (ptr1)
 	{
-		j = 0;
-		counter = 0;
-		while (j < ft_stacksize(stack))
+		ptr2 = ptr1->next;
+		while (ptr2)
 		{
-			if (ptr->content == tracker[j])
-				counter++;
-			if (counter > 1)
-				return (free(tracker), 1);
-			j++;
+			if (ptr1->content == ptr2->content)
+				return (1);
+			ptr2 = ptr2->next;
 		}
-		ptr = ptr->next;
-		i++;
+		ptr1 = ptr1->next;
 	}
-	return (free(tracker), 0);
-}
-
-void	create_tracker(int	**track, t_stack *stack)
-{
-	int		len;
-	int		i;
-	t_stack	*ptr;
-
-	ptr = stack;
-	len = ft_stacksize(stack);
-	*track = malloc(len * sizeof(int));
-	if (!*track)
-		return ;
-	i = 0;
-	while (i < len)
-	{
-		(*track)[i] = ptr->content;
-		ptr = ptr->next;
-		i++;
-	}
+	return (0);
 }
