@@ -6,7 +6,7 @@
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 14:50:11 by ryatan            #+#    #+#             */
-/*   Updated: 2026/05/07 18:03:22 by ryatan           ###   ########.fr       */
+/*   Updated: 2026/05/08 22:43:28 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,7 @@ void	ft_free_stack(t_stack **stack_a);
 void	push_swap(t_stack **stack_a, t_stack **stack_b);
 int		ft_stacksize(t_stack *lst);
 void	free_all(char **arr);
+int		ft_find_len(char **arr);
+int		init_stack_from_input(int argc, char **argv, t_stack **stack_a);
 
 #endif

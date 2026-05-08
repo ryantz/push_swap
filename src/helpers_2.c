@@ -6,7 +6,7 @@
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/05 14:59:24 by ryatan            #+#    #+#             */
-/*   Updated: 2026/05/07 18:02:37 by ryatan           ###   ########.fr       */
+/*   Updated: 2026/05/08 22:20:50 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,14 @@ void	free_all(char **arr)
 		i++;
 	}
 	free(arr);
+}
+
+int	ft_find_len(char **arr)
+{
+	int	len;
+
+	len = 0;
+	while (arr[len])
+		len++;
+	return (len);
 }

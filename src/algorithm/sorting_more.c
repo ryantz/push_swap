@@ -6,7 +6,7 @@
 /*   By: ryatan <ryatan@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/05 14:55:20 by ryatan            #+#    #+#             */
-/*   Updated: 2026/05/07 10:28:59 by ryatan           ###   ########.fr       */
+/*   Updated: 2026/05/08 22:40:06 by ryatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,10 @@
 int	ft_sort_four(t_stack **stack_a, t_stack **stack_b)
 {
 	int	min;
-	int	i;
 
 	min = ft_find_min(*stack_a);
-	i = 0;
 	while ((*stack_a)->content != min)
-	{
 		ft_rotate_single(stack_a, 'a');
-		i++;
-	}
 	ft_push_top_b(stack_a, stack_b);
 	ft_sort_three(stack_a);
 	ft_push_top_a(stack_a, stack_b);
